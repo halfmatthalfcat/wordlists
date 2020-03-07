@@ -10,8 +10,9 @@ Generate random [monikers](https://www.merriam-webster.com/dictionary/moniker), 
 
 ## Installation
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.halfmatthalfcat/scala-moniker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.halfmatthalfcat/scala-moniker)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.halfmatthalfcat/scala-moniker_2.12)](https://search.maven.org/search?q=com.github.halfmatthalfcat.scala-moniker)
 
+### SBT
 ```scala
 "com.github.halfmatthalfcat" %% "scala-moniker" % "0.0.1"
 ```
