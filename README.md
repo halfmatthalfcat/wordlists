@@ -16,6 +16,48 @@ Generate random [monikers](https://www.merriam-webster.com/dictionary/moniker), 
 "com.github.halfmatthalfcat" %% "scala-moniker" % "0.0.1"
 ```
 
+## Usage
+
+### Generate a single, random moniker
+
+```scala
+import com.github.halfmatthalfcat.moniker._
+
+val moniker: Moniker = Moniker()
+
+val nickname: String = moniker.getRandom()
+```
+
+### Generate multiple monikers
+
+```scala
+import com.github.halfmatthalfcat.moniker._
+
+val moniker: Moniker = Moniker()
+
+val nicknames: Seq[String] = moniker.getRandoms(count = 10)
+```
+
+### Generate using custom lists
+
+You can specify which lists you want to generate from when instantiating
+a new instance of Moniker.
+
+```scala
+import com.github.halfmatthalfcat.moniker._
+
+val moniker: Moniker = Moniker(
+  adjectives = Seq(
+    Adjective.Appearance,
+    Adjective.Colors,
+  ),
+  nouns = Seq(
+    Noun.Astronomy,
+    Noun.Containers,
+  ) 
+)
+```
+
 ## Word Lists
 
 The word lists are based on the upstream repository [imsky/wordlists](https://github.com/imsky/wordlists) and are synced
