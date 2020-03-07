@@ -27,6 +27,7 @@ import com.github.halfmatthalfcat.moniker._
 val moniker: Moniker = Moniker()
 
 val nickname: String = moniker.getRandom()
+// weathered store
 ```
 
 ### Generate multiple monikers
@@ -36,7 +37,19 @@ import com.github.halfmatthalfcat.moniker._
 
 val moniker: Moniker = Moniker()
 
-val nicknames: Seq[String] = moniker.getRandoms(count = 10)
+val nicknames: Seq[String] = moniker.getRandoms(count = 5)
+// List(coal kilometer, level rice, cobalt library, crunchy hub, new tangent)
+```
+
+### Change the delimiter
+
+```scala
+import com.github.halfmatthalfcat.moniker._
+
+val moniker: Moniker = Moniker()
+
+val nickname: String = moniker.getRandom(delimiter = "-")
+// crabby-liner
 ```
 
 ### Generate using custom lists
