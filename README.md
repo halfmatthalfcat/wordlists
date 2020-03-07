@@ -1,7 +1,22 @@
-# Word Lists
+# scala-moniker
 
-This is a collection of English words categorized by various themes.
+Generate random [monikers](https://www.merriam-webster.com/dictionary/moniker), or nicknames, in Scala.
 
-## Guidelines
+## Support
 
-Words should be split across small categories, and as much as possible, only simple words should be included (news is better than newspaper, market is better than supermarket).
+|Version|Supported Scala Versions|
+|---|---|
+|0.0.1|2.13.x, 2.12.x|
+
+## Installation
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.halfmatthalfcat/scala-moniker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.halfmatthalfcat/scala-moniker)
+
+```scala
+"com.github.halfmatthalfcat" %% "scala-moniker" % "0.0.1"
+```
+
+## Word Lists
+
+The word lists are based on the upstream repository [imsky/wordlists](https://github.com/imsky/wordlists) and are synced
+periodically. Any request for more words should be asked/added there.
