@@ -1,4 +1,4 @@
-package com.github.halfmatthalfcat
+package com.github.halfmatthalfcat.moniker
 
 import enumeratum.EnumEntry.Snakecase
 import enumeratum._

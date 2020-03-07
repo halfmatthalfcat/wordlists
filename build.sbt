@@ -10,6 +10,6 @@ lazy val root = project.in(file("."))
     libraryDependencies ++= Seq(
       "com.beachape" %% "enumeratum" % "1.5.15",
     ),
-    mainClass in Compile := Some("com.github.halfmatthalfcat.Moniker"),
-    mainClass in (Compile, run) := Some("com.github.halfmatthalfcat.Moniker"),
+    mainClass in Compile := Some("com.github.halfmatthalfcat.moniker.Moniker"),
+    mainClass in (Compile, run) := Some("com.github.halfmatthalfcat.moniker.Moniker"),
   )

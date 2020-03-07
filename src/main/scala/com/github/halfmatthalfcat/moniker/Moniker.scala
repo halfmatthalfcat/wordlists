@@ -1,30 +1,39 @@
-package com.github.halfmatthalfcat
+package com.github.halfmatthalfcat.moniker
 
 import scala.io.Source
 import scala.util.Random
 
 class Moniker(
-  adjectives: Seq[Adjective],
-  nouns: Seq[Noun],
+  adjectives: Seq[String],
+  nouns: Seq[String],
 ) {
-  private[this] lazy val cachedAdjectives: Seq[String] =
-    Moniker.loadAdjectives(adjectives)
-  private[this] lazy val cachedNouns: Seq[String] =
-    Moniker.loadNouns(nouns)
+  private[this] val r: Random = new Random()
 
   private[this] def randomAdjective(): String = {
-    val r: Random = new Random()
-    cachedAdjectives(r.nextInt(cachedAdjectives.length + 1))
+    adjectives(r.nextInt(adjectives.length + 1))
   }
   private[this] def randomNoun(): String = {
-    val r: Random = new Random()
-    cachedNouns(r.nextInt(cachedNouns.length + 1))
+    nouns(r.nextInt(nouns.length + 1))
   }
 
+  /**
+   * Get a random adjective-noun combination for the given delimiter
+   * @param delimiter An optional delimiter
+   *                  Defaults to an empty space
+   * @return A random adjective-noun combination
+   */
   def getRandom(delimiter: String = " "): String = {
     s"${randomAdjective()}$delimiter${randomNoun()}"
   }
 
+  /**
+   * Get a sequence of n random adjective-noun combinations
+   * @param delimiter An optional delimiter
+   *                  Defaults to an empty space
+   * @param count The number of random adjective-noun combinations to return
+   *              Defaults to 1
+   * @return A sequence of random adjective-noun combinations
+   */
   def getRandoms(delimiter: String = " ", count: Int = 1): Seq[String] = {
     Seq.fill(count)(getRandom(delimiter))
   }
@@ -34,7 +43,12 @@ object Moniker {
   def apply(
     adjectives: Seq[Adjective] = Seq(),
     nouns: Seq[Noun] = Seq(),
-  ): Moniker = new Moniker(adjectives, nouns)
+  ): Moniker = {
+    new Moniker(
+      loadAdjectives(adjectives),
+      loadNouns(nouns),
+    )
+  }
 
   private def loadAdjectives(
     adjectives: Seq[Adjective],

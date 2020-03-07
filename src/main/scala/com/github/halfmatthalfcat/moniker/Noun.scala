@@ -1,7 +1,7 @@
-package com.github.halfmatthalfcat
+package com.github.halfmatthalfcat.moniker
 
-import enumeratum._
 import enumeratum.EnumEntry.Snakecase
+import enumeratum._
 
 sealed trait Noun extends EnumEntry with Snakecase
 
